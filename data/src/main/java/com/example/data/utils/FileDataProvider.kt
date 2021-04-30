@@ -7,23 +7,6 @@ import java.nio.charset.Charset
 
 class FileDataProvider(private val context: Context) {
 
-//    private fun stuff() : MutableList<String> {
-//        val listOfWords = mutableListOf<String>()
-//        try {
-//            val inputStream: String? = loadFileFromAsset("TheRailwayChildrenBook.txt")
-//            val peanut = inputStream?.split(" ")
-//            if (peanut != null) {
-//                for (word in peanut) {
-//                    println(word)
-//                }
-//            }
-//
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//        return listOfWords
-//    }
-
     private fun loadFileFromAsset(filename: String): String? {
         val inputStream: InputStream?
         try {

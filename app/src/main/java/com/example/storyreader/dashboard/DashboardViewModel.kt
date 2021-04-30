@@ -9,7 +9,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DashboardViewModel @Inject constructor(private val railwayChildrenWordsUseCase: GetRailwayChildrenWordsUseCase) : BaseViewModel() {
-
     fun getRailwayChildrenBook() : Observable<DashboardState> {
         return railwayChildrenWordsUseCase.invoke()
             .observeOn(AndroidSchedulers.mainThread())
@@ -22,10 +21,6 @@ class DashboardViewModel @Inject constructor(private val railwayChildrenWordsUse
                         DashboardState.Error(state.message)
                     }
                 }
-            }
+            }.startWith(DashboardState.Loading)
     }
-
-//    sealed class ViewEvent {
-//        data class Error(val message: String?) : ViewState()
-//    }
 }

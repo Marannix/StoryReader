@@ -25,7 +25,10 @@ class MainActivity : AppCompatActivity() {
                     Log.d("loading", "hi")
                 }
                 is DashboardState.RailwayChildrenBook -> {
-                    Log.d("book", "hi")
+                    it.book.forEach {
+                        println(it.key + " " + it.value)
+                    }
+                    //Log.d("book", sta)
                 }
                 is DashboardState.Error -> {
                     Log.d("error", it.message ?: "no error")
