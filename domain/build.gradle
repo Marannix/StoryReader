@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id 'kotlin-kapt'
 }
 
 java {
@@ -10,4 +11,14 @@ java {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //RETROFIT
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+
+    //RXJAVA
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.14'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //Hilt
+    kapt "com.google.dagger:hilt-android-compiler:2.35.1"
 }
