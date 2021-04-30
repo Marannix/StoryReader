@@ -19,14 +19,14 @@ class GetRailwayChildrenWordsUseCase @Inject constructor(private val repository:
 
         //TODO: Remove special characters
         book.split(" ").forEach { word ->
-            if (hashMap[word] == null) {
-                hashMap[word] = 1
+            val capitalizedWord = word.capitalize()
+            if (hashMap[capitalizedWord] == null) {
+                hashMap[capitalizedWord] = 1
             } else {
-                val count = hashMap[word]!!
-                hashMap[word] = count + 1
+                val count = hashMap[capitalizedWord]!!
+                hashMap[capitalizedWord] = count + 1
             }
         }
-
         return hashMap
     }
 
