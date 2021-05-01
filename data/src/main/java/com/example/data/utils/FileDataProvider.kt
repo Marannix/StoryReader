@@ -6,7 +6,6 @@ import java.io.InputStream
 import java.nio.charset.Charset
 
 class FileDataProvider(private val context: Context) {
-
     private fun loadFileFromAsset(filename: String): String? {
         val inputStream: InputStream?
         try {
@@ -14,7 +13,6 @@ class FileDataProvider(private val context: Context) {
         } catch (error: IOException) {
             throw error
         }
-
         return convertInputStreamToString(inputStream)
     }
 
@@ -31,7 +29,6 @@ class FileDataProvider(private val context: Context) {
         } catch (exception: IOException) {
             throw exception
         }
-
         return result
     }
 }

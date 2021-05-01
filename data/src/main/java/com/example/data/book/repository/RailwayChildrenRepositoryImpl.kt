@@ -18,7 +18,7 @@ class RailwayChildrenRepositoryImpl (private val booksApi: BooksApi) : RailwayCh
 
     //TODO: Lol at this string Wewantedtotellyouonlywethoughtitwouldbestalenews
     private fun removeAllSpecialCharacters(book: String) : String {
-        val regex = Regex("[^A-Za-z0-9]")
+        val regex = Regex("[^A-Za-z]")
         return book.replace(regex, " ")
     }
 }

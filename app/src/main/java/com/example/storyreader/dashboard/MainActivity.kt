@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
                     it.book.forEach {
                         println(it.key + " " + it.value)
                     }
-                    //Log.d("book", sta)
                 }
                 is DashboardState.Error -> {
                     Log.d("error", it.message ?: "no error")
