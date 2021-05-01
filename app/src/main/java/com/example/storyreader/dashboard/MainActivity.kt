@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.storyreader.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,14 +13,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
     private val viewModel : DashboardViewModel by lazy {
         ViewModelProvider(this).get<DashboardViewModel>(
             DashboardViewModel::class.java
         )
     }
 
-    private val dashboardAdapter = DashboardAdapter()
+    private val dashboardAdapter by lazy { DashboardAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,12 +43,11 @@ class MainActivity : AppCompatActivity() {
                     Log.d("error", state.message ?: "no error")
                 }
             }
-
         })
     }
 
     private fun setAdapter() {
-        recyclerView.layoutManager = LinearLayoutManager(baseContext)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
         recyclerView.adapter = dashboardAdapter
     }
 }

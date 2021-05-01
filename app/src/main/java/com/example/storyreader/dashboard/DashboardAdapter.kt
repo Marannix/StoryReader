@@ -38,7 +38,9 @@ class DashboardAdapter : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         fun bind(word: String, second: BookDetails) {
-            itemView.testTextView.text = word
+            itemView.wordLabel.text = word
+            itemView.wordCount.text = "Shown ${second.count.toString()} times"
+            itemView.wordPrimeNumber.text = "Prime Number: ${second.isPrimeNumber.toString()}"
         }
     }
 }

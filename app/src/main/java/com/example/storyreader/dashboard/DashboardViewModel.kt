@@ -9,7 +9,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DashboardViewModel @Inject constructor(private val railwayChildrenWordsUseCase: GetRailwayChildrenWordsUseCase) : BaseViewModel() {
-
     val viewState = MutableLiveData<DashboardState>()
 
     fun getRailwayChildrenBook() {
@@ -31,6 +30,5 @@ class DashboardViewModel @Inject constructor(private val railwayChildrenWordsUse
                     viewState.value = it
                 }.addDisposable()
         }
-
     }
 }
