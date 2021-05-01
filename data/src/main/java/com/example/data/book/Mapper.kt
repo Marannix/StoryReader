@@ -5,7 +5,7 @@ import com.example.domain.common.BookDetails
 fun getWordsAndCount(book: String): HashMap<String, Int> {
     val wordsWithCount = hashMapOf<String, Int>()
     book.split(" ").forEach { word ->
-        val capitalizedWord = word.capitalize()
+        val capitalizedWord = word.toLowerCase().capitalize()
         if (wordsWithCount[capitalizedWord] == null) {
             wordsWithCount[capitalizedWord] = 1
         } else {
