@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="generic_margin_8">8dp</dimen>
+
+    <dimen name="progress_bar_width">24dp</dimen>
+    <dimen name="progress_bar_height">24dp</dimen>
+</resources>

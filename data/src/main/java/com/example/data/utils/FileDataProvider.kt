@@ -6,7 +6,7 @@ import java.io.InputStream
 import java.nio.charset.Charset
 
 class FileDataProvider(private val context: Context) {
-    private fun loadFileFromAsset(filename: String): String? {
+    fun loadFileFromAsset(filename: String): String? {
         val inputStream: InputStream?
         try {
             inputStream = context.assets.open(filename)

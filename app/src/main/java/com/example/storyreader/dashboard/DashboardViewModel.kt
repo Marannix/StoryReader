@@ -21,7 +21,7 @@ class DashboardViewModel @Inject constructor(private val railwayChildrenWordsUse
                             DashboardState.RailwayChildrenBook(state.listOfWords)
                         }
                         is GetRailwayChildrenWordsUseCase.RailwayChildrenDataState.Error -> {
-                            DashboardState.Error(state.message)
+                            DashboardState.Error(state.message, state.bookFromLocalStorage)
                         }
                     }
                 }
