@@ -1,0 +1,36 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.data.test" >
+4
+5    <uses-sdk
+5-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:5:5-74
+6        android:minSdkVersion="21"
+6-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:5:15-41
+7        android:targetSdkVersion="30" />
+7-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:5:42-71
+8
+9    <instrumentation
+9-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:11:5-15:71
+10        android:name="androidx.test.runner.AndroidJUnitRunner"
+10-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:11:22-76
+11        android:functionalTest="false"
+11-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:14:22-52
+12        android:handleProfiling="false"
+12-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:13:22-53
+13        android:label="Tests for com.example.data.test"
+13-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:15:22-69
+14        android:targetPackage="com.example.data.test" />
+14-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:12:22-67
+15
+16    <application
+16-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:7:5-9:19
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.3.2] /Users/joshua/.gradle/caches/transforms-2/files-2.1/dc1c3e39e3d80bc94a96bf25d689f1a5/core-1.3.2/AndroidManifest.xml:24:18-86
+18        android:debuggable="true" >
+18-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:7:18-43
+19        <uses-library android:name="android.test.runner" />
+19-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:8:9-60
+19-->/Users/joshua/StoryReader/data/build/intermediates/tmp/manifest/androidTest/debug/manifestMerger8358763717745449893.xml:8:23-57
+20    </application>
+21
+22</manifest>

@@ -1,0 +1,1 @@
+/Users/joshua/StoryReader/domain/build/classes/kotlin/main/com/example/domain/Domain.class:/Users/joshua/StoryReader/domain/build/classes/kotlin/main/com/example/domain/book/repository/RailwayChildrenRepository.class:/Users/joshua/StoryReader/domain/build/classes/kotlin/main/com/example/domain/common/BookDetails.class
