@@ -1,5 +1,6 @@
 package com.example.storyreader.dashboard
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import com.example.domain.common.BookDetails
 import com.example.storyreader.R
 import kotlinx.android.synthetic.main.item_words.view.*
 
-class DashboardAdapter : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
+class DashboardAdapter(private val context: Context) : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
     private var dataHashMap = hashMapOf<String, BookDetails>()
     private var dataList =  arrayListOf<Pair<String, BookDetails>>()
@@ -23,7 +24,7 @@ class DashboardAdapter : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (dataList.isNotEmpty()) {
-            holder.bind(dataList[position].first, dataList[position].second)
+            holder.bind(dataList[position].first, dataList[position].second, context)
         }
     }
 
@@ -37,10 +38,11 @@ class DashboardAdapter : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
     }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        fun bind(word: String, second: BookDetails) {
+        fun bind(word: String, second: BookDetails, context: Context) {
             itemView.wordLabel.text = word
-            itemView.wordCount.text = "Shown ${second.count.toString()} times"
-            itemView.wordPrimeNumber.text = "Prime Number: ${second.isPrimeNumber.toString()}"
+            itemView.wordCount.text = context.getString(R.string.word_count_description, second.count.toString())
+            itemView.wordPrimeNumber.text = context.getString(R.string.word_count_description, second.count.toString())
+            itemView.wordPrimeNumber.text = context.getString(R.string.word_count_description, second.isPrimeNumber.toString())
         }
     }
 }

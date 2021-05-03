@@ -1,8 +1,8 @@
 package com.example.storyreader.dashboard
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             DashboardViewModel::class.java
         )
     }
-    private val dashboardAdapter by lazy { DashboardAdapter() }
+    private val dashboardAdapter by lazy { DashboardAdapter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 is DashboardState.Error -> {
                     progress.visibility = View.INVISIBLE
-                    Log.d("error", state.message ?: "no error")
                     state.bookFromLocalStorage.let { formattedBook ->
                         if (formattedBook != null) {
+                            Toast.makeText(this, "Loading from local storage", Toast.LENGTH_SHORT).show()
                             dashboardAdapter.setData(formattedBook)
                         }
                     }

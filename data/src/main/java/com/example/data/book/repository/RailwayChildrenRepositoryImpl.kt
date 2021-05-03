@@ -22,7 +22,6 @@ class RailwayChildrenRepositoryImpl @Inject constructor(private val booksApi: Bo
         return fileDataProvider.loadFileFromAsset(book)?.let { removeAllSpecialCharacters(it) }
     }
 
-    //TODO: Lol at this string Wewantedtotellyouonlywethoughtitwouldbestalenews
     private fun removeAllSpecialCharacters(book: String) : String {
         return book.replace(FILTER_SPECIAL_CHARACTERS, EMPTY_SPACE)
     }

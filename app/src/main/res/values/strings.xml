@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StoryReader</string>
+    <string name="word_count_description">Show %s times</string>
+    <string name="word_count_prime_number_description">Prime Number: %s</string>
 </resources>

@@ -7,15 +7,16 @@ import com.example.domain.common.BookDetails
 import io.reactivex.Observable
 import javax.inject.Inject
 
-private const val RAILWAY_CHILDREN_BOOK = "TheRailwayChildrenBook.txt"
+private const val RAILWAY_CHILDREN_BOOK_LOCAL = "TheRailwayChildrenBook.txt"
+private const val RAILWAY_CHILDREN_BOOK_API = "Railway-Children-by-E-Nesbit.txt"
 
 class GetRailwayChildrenWordsUseCase @Inject constructor(private val repository: RailwayChildrenRepository) {
     operator fun invoke() : Observable<RailwayChildrenDataState> {
-        return repository.getBook(RAILWAY_CHILDREN_BOOK)
+        return repository.getBook(RAILWAY_CHILDREN_BOOK_API)
             .map <RailwayChildrenDataState> { book ->
                 RailwayChildrenDataState.Success(getFormattedWords(book))
             }.onErrorReturn { error ->
-                repository.getBookFromLocalStorage(RAILWAY_CHILDREN_BOOK).let { book ->
+                repository.getBookFromLocalStorage(RAILWAY_CHILDREN_BOOK_LOCAL).let { book ->
                     if (book == null) {
                         RailwayChildrenDataState.Error(error.message, null)
                     } else {
