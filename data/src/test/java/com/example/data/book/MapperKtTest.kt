@@ -37,27 +37,27 @@ class MapperKtTest {
 
     private fun fakeWordsWithCount() : HashMap<String, Int> {
         val wordsWithCount = hashMapOf<String, Int>()
-        wordsWithCount["Next"] = 2
-        wordsWithCount["Came"] = 2
-        wordsWithCount["Peter"] = 1
-        wordsWithCount["A"] = 2
-        wordsWithCount["Engineer"] = 1
-        wordsWithCount["Prime"] = 5
-        wordsWithCount["Number"] = 1
-        wordsWithCount["Butter"] = 4
+        wordsWithCount["next"] = 2
+        wordsWithCount["came"] = 2
+        wordsWithCount["peter"] = 1
+        wordsWithCount["a"] = 2
+        wordsWithCount["engineer"] = 1
+        wordsWithCount["prime"] = 5
+        wordsWithCount["number"] = 1
+        wordsWithCount["butter"] = 4
         return wordsWithCount
     }
 
     private fun fakeWordsAndCountWithPrimeNumberCheck() : HashMap<String, BookDetails> {
         val bookDetails = hashMapOf<String, BookDetails>()
-        bookDetails["Next"] = BookDetails(2, true)
-        bookDetails["Came"] = BookDetails(2, true)
-        bookDetails["Peter"] = BookDetails(1, true)
-        bookDetails["A"] = BookDetails(2, true)
-        bookDetails["Engineer"] = BookDetails(1, true)
-        bookDetails["Prime"] = BookDetails(5, true)
-        bookDetails["Number"] = BookDetails(1, true)
-        bookDetails["Butter"] = BookDetails(4, false)
+        bookDetails["next"] = BookDetails(2, true)
+        bookDetails["came"] = BookDetails(2, true)
+        bookDetails["peter"] = BookDetails(1, true)
+        bookDetails["a"] = BookDetails(2, true)
+        bookDetails["engineer"] = BookDetails(1, true)
+        bookDetails["prime"] = BookDetails(5, true)
+        bookDetails["number"] = BookDetails(1, true)
+        bookDetails["butter"] = BookDetails(4, false)
         return bookDetails
     }
 

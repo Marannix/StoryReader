@@ -4,21 +4,14 @@ import com.example.data.utils.APOSTROPHE
 import com.example.data.utils.EMPTY_SPACE
 import com.example.domain.common.BookDetails
 
-fun getWordsAndCount(book: String): HashMap<String, Int> {
-    val wordsWithCount = hashMapOf<String, Int>()
-    book.split(EMPTY_SPACE).filter { it.isNotEmpty() && it != APOSTROPHE}.forEach { word ->
-        val capitalizedWord = word.toLowerCase().capitalize()
-        if (wordsWithCount[capitalizedWord] == null) {
-            wordsWithCount[capitalizedWord] = 1
-        } else {
-            val count = wordsWithCount[capitalizedWord]!!
-            wordsWithCount[capitalizedWord] = count + 1
-        }
-    }
-    return wordsWithCount
+fun getWordsAndCount(book: String): Map<String, Int> {
+    return book.split(EMPTY_SPACE)
+        .filter { it.isNotEmpty() && it != APOSTROPHE }
+        .groupingBy { it.toLowerCase() }
+        .eachCount()
 }
 
-fun formatWithPrimeNumberCheck(wordsWithCount: HashMap<String, Int>): HashMap<String, BookDetails> {
+fun formatWithPrimeNumberCheck(wordsWithCount: Map<String, Int>): HashMap<String, BookDetails> {
     val primeNumberMap = hashMapOf<Int, Boolean>()
     val bookDetails = hashMapOf<String, BookDetails>()
 
