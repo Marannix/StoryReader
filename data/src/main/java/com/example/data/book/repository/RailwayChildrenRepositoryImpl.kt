@@ -1,6 +1,8 @@
 package com.example.data.book.repository
 
 import com.example.data.remote.BooksApi
+import com.example.data.utils.EMPTY_SPACE
+import com.example.data.utils.FILTER_SPECIAL_CHARACTERS
 import com.example.data.utils.FileDataProvider
 import com.example.domain.book.repository.RailwayChildrenRepository
 import io.reactivex.Observable
@@ -22,7 +24,6 @@ class RailwayChildrenRepositoryImpl @Inject constructor(private val booksApi: Bo
 
     //TODO: Lol at this string Wewantedtotellyouonlywethoughtitwouldbestalenews
     private fun removeAllSpecialCharacters(book: String) : String {
-        val regex = Regex("[^A-Za-z]")
-        return book.replace(regex, " ")
+        return book.replace(FILTER_SPECIAL_CHARACTERS, EMPTY_SPACE)
     }
 }

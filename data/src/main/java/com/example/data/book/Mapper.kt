@@ -1,10 +1,12 @@
 package com.example.data.book
 
+import com.example.data.utils.APOSTROPHE
+import com.example.data.utils.EMPTY_SPACE
 import com.example.domain.common.BookDetails
 
 fun getWordsAndCount(book: String): HashMap<String, Int> {
     val wordsWithCount = hashMapOf<String, Int>()
-    book.split(" ").filter { it.isNotEmpty() }.forEach { word ->
+    book.split(EMPTY_SPACE).filter { it.isNotEmpty() && it != APOSTROPHE}.forEach { word ->
         val capitalizedWord = word.toLowerCase().capitalize()
         if (wordsWithCount[capitalizedWord] == null) {
             wordsWithCount[capitalizedWord] = 1
@@ -33,7 +35,7 @@ fun formatWithPrimeNumberCheck(wordsWithCount: HashMap<String, Int>): HashMap<St
     return bookDetails
 }
 
-private fun isPrimeNumber(number: Int) : Boolean {
+fun isPrimeNumber(number: Int) : Boolean {
     var isPrimeNumber = true
     for (i in 2..number / 2) {
         if (number % i == 0) {
@@ -41,6 +43,5 @@ private fun isPrimeNumber(number: Int) : Boolean {
             break
         }
     }
-
     return isPrimeNumber
 }
