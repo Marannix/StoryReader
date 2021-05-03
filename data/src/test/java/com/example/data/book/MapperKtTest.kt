@@ -18,7 +18,7 @@ class MapperKtTest {
 
     @Test
     fun `when prime number THEN return true`() {
-        assertEquals(isPrimeNumber(1), true)
+        assertEquals(isPrimeNumber(1), false)
         assertEquals(isPrimeNumber(2), true)
         assertEquals(isPrimeNumber(857), true)
         assertEquals(isPrimeNumber(911), true)

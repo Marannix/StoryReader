@@ -29,6 +29,8 @@ fun formatWithPrimeNumberCheck(wordsWithCount: Map<String, Int>): HashMap<String
 }
 
 fun isPrimeNumber(number: Int) : Boolean {
+    if (number == 1) return false
+    if (number == 2) return true
     var isPrimeNumber = true
     for (i in 2..number / 2) {
         if (number % i == 0) {

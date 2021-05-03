@@ -42,7 +42,7 @@ class DashboardAdapter(private val context: Context) : RecyclerView.Adapter<Dash
             itemView.wordLabel.text = word
             itemView.wordCount.text = context.getString(R.string.word_count_description, second.count.toString())
             itemView.wordPrimeNumber.text = context.getString(R.string.word_count_description, second.count.toString())
-            itemView.wordPrimeNumber.text = context.getString(R.string.word_count_description, second.isPrimeNumber.toString())
+            itemView.wordPrimeNumber.text = context.getString(R.string.word_count_prime_number_description, second.isPrimeNumber.toString())
         }
     }
 }
