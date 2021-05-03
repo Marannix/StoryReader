@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="4dp">
+    android:padding="4dp"
+    android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/wordLabel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/word_label_text_size"
+        android:textStyle="bold"
+        tools:text="Frowning" />
 
     <TextView
         android:id="@+id/wordCount"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/word_count_text_size"
+        tools:text="Show 1 times" />
 
     <TextView
         android:id="@+id/wordPrimeNumber"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/word_prime_number_text_size"
+        tools:text="Prime number: false" />
 
 </LinearLayout>

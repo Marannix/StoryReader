@@ -7,7 +7,7 @@ import com.example.domain.common.BookDetails
 fun getWordsAndCount(book: String): Map<String, Int> {
     return book.split(EMPTY_SPACE)
         .filter { it.isNotEmpty() && it != APOSTROPHE }
-        .groupingBy { it.toLowerCase() }
+        .groupingBy { it.toLowerCase().capitalize() }
         .eachCount()
 }
 
