@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.common.BookDetails
 import com.example.storyreader.R
+import com.example.storyreader.util.makePrimeNumberText
 import kotlinx.android.synthetic.main.item_words.view.*
 
 class DashboardAdapter(private val context: Context) : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
@@ -39,10 +40,23 @@ class DashboardAdapter(private val context: Context) : RecyclerView.Adapter<Dash
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         fun bind(word: String, second: BookDetails, context: Context) {
+            val stringRes: Int
+            val colorRes: Int
+            when {
+                second.isPrimeNumber -> {
+                    stringRes = R.string.word_prime_number_true
+                    colorRes =  R.color.green
+                }
+                else -> {
+                    stringRes = R.string.word_prime_number_false
+                    colorRes =  R.color.red
+                }
+            }
             itemView.wordLabel.text = word
             itemView.wordCount.text = context.getString(R.string.word_count_description, second.count.toString())
             itemView.wordPrimeNumber.text = context.getString(R.string.word_count_description, second.count.toString())
             itemView.wordPrimeNumber.text = context.getString(R.string.word_count_prime_number_description, second.isPrimeNumber.toString())
+            itemView.wordPrimeNumber.text = makePrimeNumberText(context, R.string.word_count_prime_number_description, colorRes, stringRes)
         }
     }
 }
